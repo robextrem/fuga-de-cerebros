@@ -1,0 +1,17 @@
+book_filename: "reporte-fuga-de-cerebros"
+language:
+  label:
+    fig: "Figura "
+    tab: "Tabla "
+    eq: 'Ecuación '
+    thm: 'Teorema '
+    lem: 'Lemma '
+    def: 'Definiciónn '
+    cor: 'Corolario '
+    prp: 'Proposición '
+    ex: 'Ejemplo '
+    proof: 'Prueba. '
+    remark: 'Remark. '
+  ui:
+    edit: "Editar"
+    chapter_name: ""

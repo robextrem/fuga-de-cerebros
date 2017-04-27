@@ -1,0 +1,26 @@
+bookdown::gitbook:
+  css: style.css
+  sharing:
+    facebook: yes
+    twitter: yes
+    google: yes
+  search: true
+  download: ["pdf", "epub"]
+  config:
+    toc:
+      collapse: section
+      scroll_highlight: true
+      before: |
+        <li><a href="./">FDC: Reporte Técnico</a></li>
+    edit:
+      link: https://github.com/ITAM-DS/fuga-de-cerebros/edit/master/%s
+bookdown::pdf_book:
+  includes:
+    in_header: preamble.tex
+  latex_engine: xelatex
+  pandoc_args: --chapters
+  citation_package: natbib
+bookdown::epub_book: default
+
+
+

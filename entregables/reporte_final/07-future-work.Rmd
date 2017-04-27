@@ -1,0 +1,15 @@
+# Trabajo futuro
+
+Sin duda, la idea del proyecto Fuga de Cerebros (FDC) es creativa y puede ser un instrumento útil para generar y aprovechar las redes de conocimiento en nuestro país. Siendo esta apenas una primera fase de FDC, se pueden considerar diversas opciones para mejorar las recomendaciones de Talentos. Actualmente se continuan desarrollando técnicas y herramientas para su perfección debido a otras alternativas que pueden ser más complejas.
+
+Para robustecer el sistema de recomendación se sugiere incoporar rankings a los perfiles recomendados. Esto puede ser posible si se tiene información de qué tan exitoso es el talento en los proyectos que ha trabajado, con cuáles empresas e instituciones ha tenido mayor contacto, qué clase de proyectos se adaptan a los intereses de los talentos, entre otras variables que surgen de los datos de interacción entre los promotores de proyectos y los talentos (datos históricos). 
+
+Otra alternativa a considerar es modelar un algoritmo de aprendizaje de máquina supervisado usando como variable a predecir la probabilidad de éxito en una interacción entre el promotor del proyecto y el talento. Esto tomaría en cuenta el tiempo en que el reclutador se puso en contacto, si existió una oferta y si el talento aceptó la oferta, entre otras posibles variables. Lo anterior podría ayudar a filtrar a los talentos que no solamente cumplen con las capacidades requeridas para realizar el proyecto sino que son valorados de manera positiva por los promotores. Además, si las empresas e instituciones tienen un historial de proyectos a través de FDC, se podrá recomendar aquellos perfiles que han aceptado trabajar con proyectos de dichas organizaciones.
+
+Otra propuesta podría ser un algoritmo de aprendizaje de máquina no supervisado según las habilidades en común que comparten los talentos, permitiendo así recomendar talentos según la pertenencia a determinado grupo. Lo anterior nos permitiría agrupar a distintos perfiles que son competitivos en áreas muy específicas.
+
+Así mismo, una vez que esté operando el proyecto y si se llegara a capturar en la plataforma web la interacción entre los perfiles se podrían generar grupos de acuerdo a sus relaciones colaborativas e intereses. Generalmente en las redes de talentos como Linkedin es fácil ver cómo determinados grupos de especialistas comparten y reaccionan a distintas noticias y eventos.
+
+Si en algún momento se considerara implementar algunos algoritmos de aprendizaje de máquina como los propuestos en esta sección, existiría la necesidad de adaptar una arquitectura de producto de datos escalable y que trabaje en paraleo, con el objetivo de tener la capacidad de modelar y entrenar offline/online, y que a la par, se pueda evaluar el desempeño del modelo seleccionado contra el modelo actual.
+
+Hay diversas formas en las que se pueden mejorar las recomendaciones de Talentos pero estas dependen de datos que logren capturar las características de sus clientes, desde datos básicos hasta los patrones de uso de la plataforma como lo son la interacción entre los talentos y promotores participantes.

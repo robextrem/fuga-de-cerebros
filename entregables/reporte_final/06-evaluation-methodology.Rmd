@@ -1,0 +1,14 @@
+# Conclusiones
+
+Siguiendo las metodologías de las Ciencias de Datos, este proyecto desarrolló una arquitectura de productos de datos con el objetivo de organizar un pipeline orquestado de manera automática para la extracción, transformación y carga de datos para la ejecución de un sistema de recomendación.
+
+La arquitectura de producto de datos propuesta tiene como base un conjunto de bloques/contenedores Docker que permiten operar el flujo de trabajo sin importar el ambiente o infraestructura sobre el que se decida. Esto es muy importante dado que al trabajar con distintos sistemas operativos puede llegar a generar problemas de compatibilidad. Sin embargo, la tecnología de contendores virtuales *Docker* puede ser montado sobre distintas plataformas, incluso sobre servicios de computo en la nube como Amazon Web Services (AWS). Entre otras ventajas de Docker destacan el poco uso de memoria RAM y que cada contenedor puede correr aplicaciones de manera independiente con la posibilidad de conectarse para cumplir distintas funciones del flujo de trabajo.
+
+
+Lo más importante de esta arquitectura de producto de datos es la elección de un sistema de recomendación a través de una estructura de base de datos grafos que permite tener una alta capacidad de procesamiento para generar recomendaciones (*MATCH*) gracias a que su motor de procesamiento se basa en índices-libres, reduciendo el costo de la búsqueda de información. El objetivo es construir una base de datos de grafos a partir de sus atributos para almacenar y consultar información interconectada partirá de distintas fuentes de datos. Los registros de nodos que se generen de estas fuentes de datos almacenan apuntadores a listas de nodos, relaciones y propiedades de estos. Este cómputo a través de apuntadores agiliza el procesamiento de búsquedas de acuerdo a atributos que compartan los nodos.
+
+En este proyecto se propone consultar las recomendaciones de nuestro sistema a través de un servicio web REST dado su buena capacidad de escalamiento, y la facilidad para ejecutar operaciones a través de los cuatro verbos HTTP (GET, POST, PUT, DELETE) que son sencillos y universalmente aplicados, haciendo las tareas de *request-response* de datos la manera más sencilla posible.
+
+En general, consideramos que la metodología para llevar a cabo la arquitectura de datos para el sistema de recomendación puede trabajar en diferentes ambientes (contenedores docker), aprovechamos la velocidad y la potencia de las bases de datos de grafo (neo4j) y utilizamos un servicio web universalmente empleado en distintas aplicaciones.
+
+En el siguiente capítulo [Trabajo futuro] sugerimos cómo se puede robustecer en un futuro el sistema de recomendación.

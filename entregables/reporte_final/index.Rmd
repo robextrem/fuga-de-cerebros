@@ -1,0 +1,17 @@
+---
+title: #"Fuga de Cerebros : Reporte de Conacyt"
+author: #"Fernanda Alcalá, J. Adrián Sánchez, Sergio Haro, Denisse Martínez, Adolfo De Unánue T."
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: 
+  bookdown::gitbook:
+    split_bib: false
+    includes:
+      #after_body: 08-appendix.Rmd
+documentclass: memoir
+bibliography: [fdc.bib]
+biblio-style: apalike
+link-citations: yes
+github-repo: ITAM-DS/fuga-de-cerebros
+description: ""
+---

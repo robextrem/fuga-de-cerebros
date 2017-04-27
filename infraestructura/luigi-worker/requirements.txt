@@ -1,0 +1,8 @@
+######  Ingestion de Datos ######
+luigi==2.3.3
+pandas==0.18.1
+numpy==1.11.0
+
+###### Grafo ######
+py2neo==3.1.2
+jsonlines==1.1.0

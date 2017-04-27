@@ -1,0 +1,115 @@
+\usepackage{booktabs}
+\usepackage{draftwatermark}
+\SetWatermarkText{\shortstack{INCOMPLETE \\[0.5cm] DRAFT}}
+\SetWatermarkScale{0.7}
+
+
+%\usepackage[T1]{fontenc} % Support for more character glyphs
+%\usepackage[round]{natbib}\citeindextrue % Round brackets around citations, change to square for square brackets
+\usepackage{graphicx} % Required to include images
+\usepackage{color} % Required for custom colors
+\usepackage{amsmath,amssymb,theorem} % Math packages
+\usepackage{listings} % Required for including snippets of code
+\usepackage{booktabs} % Required for better horizontal rules in tables
+\usepackage{xspace} % Provides the ability to use an intelligent space which is used in \institution and \department
+\usepackage[printonlyused,withpage]{acronym} % Include a list of acronyms
+\usepackage{rotating} % Allows tables and figures to be rotated
+\usepackage{hyperref} % Required for links and changing link options
+\usepackage{microtype} % Slightly tweak font spacing for aesthetics
+
+\hypersetup{colorlinks, breaklinks, linkcolor=black,citecolor=black,filecolor=black,urlcolor=black} % Set up hyperlinks including colors for references, urls and citations
+
+%\definecolor{c64}{rgb}{.063,0,.612} % Example color definition, the color can be used with the \color{name} command
+
+\makeatletter
+\renewcommand{\fnum@figure}{\textsc{\figurename~\thefigure}} % Make the "Figure 1.1" text in small caps
+\makeatother
+
+
+%----------------------------------------------------------------------------------------
+%	CHAPTER HEADING STYLE
+%----------------------------------------------------------------------------------------
+
+\makeatletter
+\makechapterstyle{thesis}{
+\renewcommand{\chapternamenum}{}
+\setlength{\beforechapskip}{0pt}
+\setlength{\midchapskip}{0pt}
+\setlength{\afterchapskip}{0pt}
+\renewcommand{\chapnamefont}{\LARGE}
+\renewcommand{\chapnumfont}{\chapnamefont}
+\renewcommand{\chaptitlefont}{\chapnamefont}
+\renewcommand{\printchapternum}{}
+\renewcommand{\afterchapternum}{}
+\renewcommand{\printchaptername}{}
+\renewcommand{\afterchaptertitle}{\chapnumfont\hfill\thechapter\\\vspace*{-.3cm}\hrulefill\vspace*{6cm}\\}
+}
+\makeatother
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS DEPTH
+%----------------------------------------------------------------------------------------
+
+\maxsecnumdepth{subsubsection}
+\maxtocdepth{subsection}
+
+%----------------------------------------------------------------------------------------
+%	MATH THEOREM DEFINITIONS
+%----------------------------------------------------------------------------------------
+
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[section] % Defines the theorem environment
+\newtheorem{prop}[thm]{Proposition} % Defines the proposition environment
+\newtheorem{proof}{Proof}[section] % Defines the proof environment
+\newtheorem{definition}{Definition}[section] % Defines the definition environment
+\newtheorem{example}{Example}[section] % Defines the example environment
+\newtheorem{rem}{Remark} % Defines the remark environment
+\newtheorem{note}{Note}[section] % Defines the note environment
+
+%----------------------------------------------------------------------------------------
+%	CODE SNIPPET CONFIGURATION
+%----------------------------------------------------------------------------------------
+
+\lstset{
+  basicstyle=\ttfamily\small,
+  basewidth=0.55em,
+  showstringspaces=false,
+  numbers=left,
+  numberstyle=\tiny,
+  numbersep=2.5pt,
+  keywordstyle=\bfseries\ttfamily,
+  breaklines=true
+}
+% Examples of list environments for different programming languages, you will likely need to specify your own
+\lstnewenvironment{pseudoc}{\lstset{frame=lines,language=C,mathescape=true}}{}
+\lstnewenvironment{logs}{\lstset{frame=lines,basicstyle=\footnotesize\ttfamily,numbers=none}}{}
+\lstnewenvironment{cc}{\lstset{frame=lines,language=C}}{}
+\lstnewenvironment{c64}{\lstset{backgroundcolor=\color{c64},basewidth=0.65em,basicstyle=\commodoreface\color{c64light},numbers=none,framerule=10pt,rulecolor=\color{c64light},frame=tb,framexbottommargin=30pt}}{}
+\lstnewenvironment{html}{\lstset{frame=lines,language=html,numbers=none}}{}
+\lstnewenvironment{pseudo}{\lstset{frame=lines,mathescape=true,morekeywords={learn_string_domain, save_model}}}{}
+\lstnewenvironment{pseudoctiny}{\lstset{language=C,mathescape=true,basicstyle=\tiny\sffamily}}{}
+\lstnewenvironment{cctiny}{\lstset{language=C,basicstyle=\tiny\sffamily}}{}
+\lstnewenvironment{pseudotiny}{\lstset{mathescape=true,basicstyle=\tiny\sffamily}}{}
+
+
+%% BEGIN TITLE
+
+\makeatletter
+\def\maketitle{%
+  \null
+  \thispagestyle{empty}%
+  \vfill
+  \begin{center}\leavevmode
+    \normalfont
+    {\LARGE\raggedleft \@author\par}%
+    \hrulefill\par
+    {\huge\raggedright \@title\par}%
+    \vskip 1cm
+%    {\Large \@date\par}%
+  \end{center}%
+  \vfill
+  \null
+  \cleardoublepage
+  }
+\makeatother
+

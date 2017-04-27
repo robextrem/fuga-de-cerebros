@@ -1,0 +1,80 @@
+# Estructura de Bases de Datos
+
+En el capítulo anterior definimos que el objetivo de este proyecto es crear un sistema de recomendación. Para cumplir con nuestro fin fue indispensable revisar los datos disponibles, principal insumo para crear las recomendaciones. Lo ideal es tener gran cantidad de registros y que estos contengan la mayor información posible de los talentos, desde datos básicos hasta información detallada de sus estudios y áreas de experiencia.
+
+## Bases de datos disponibles
+
+En el inicio del proyecto el solicitante nos compartió las bases de datos `Padron_BECARIOS_Y_EX_CONACyT.pdf` y `Padrón de Becarios al Extranjero CONACyT 2010-2016.xlsx`. Esta última base de datos contiene información básica acerca de los mexicanos que han recibido una beca en ese periodo, incluyendo becarios actuales. Esta base cuenta con las siguientes columnas:
+
+  * Nombre becario 
+  * Inicio de beca
+  * Término de beca
+  * Nivel de estudios
+  * Institución
+  * País
+  * Programa de estudios
+  * Género
+  * Área de conocimiento
+  * Importe pagado de Enero a Marzo 2016
+
+Las estadísticas descriptivas de esta base de datos se puede consultar en el Apéndice en la sección [Análisis Exploratorio](#eda). Se comentó con el solicitante del proyecto que estos datos no eran lo suficientemente completos como para tener un modelo robusto que permita la recomendación de perfiles de becarios **CONACYT** a los distintos proyectos.
+
+Por este motivo, se propuso al solicitante considerar las siguientes opciones para enriquecer dichas bases de datos con fuentes externas:
+
+1. **Google Forms** - cuestionario enviado a la lista completa de becarios y ex becarios, con el cual se podría obtener información actualizada acerca de su situación actual y su historial laboral. Este enfoque tiene como particularidades:
+    * Alto tiempo de recolección de datos
+    * Baja tasa de respuesta
+
+2. **Linkedin** - por medio de su API (_Application Programming Interface_) existente, sería posible obtener información más detallada acerca del historial laboral de los becarios y ex becarios, así como características detalladas respecto a las empresas: tanto aquellas en las cuales han trabajado, como aquellas que ofrecerán proyectos a través de la plataforma. Este enfoque tiene como particularidades:
+    * Costos extras de solicitar datos de perfiles a Linkedin
+    * Incertidumbre sobre el número de becarios disponibles inscritos en esta plataforma digital.
+    
+3. **CONACyT** - utilizando datos de los **CVU** _(Curriculum Vitae Unico)_ de los becarios.
+Este enfoque tiene como particularidades:
+    - Necesidad de solicitar datos de los **CVUs** a **CONACyT**
+    - El formato de estas bases posiblemente no pudiera ser explotado directamente, por ejemplo en archivos '.pdf'.
+    
+##  Esquema de base de datos propuesta
+
+Dado que no se contaban con datos propusimos al solicitante las siguientes entidades de datos que capturen información detallada de los talentos y promotores, y la información generada por la interacción entre estos dentro de la plataforma.
+
+Para los becarios y ex becarios (talentos) consideramos indispensable tener información acerca de su perfil de las siguientes áreas:
+  
+  * Intereses
+  * Publicaciones
+  * Patentes
+  * Idiomas
+  * Habilidades
+  * Certificaciones
+  * Educación
+  * Cursos
+  * Voluntariado
+  * Posiciones de trabajo
+  * Información adicional
+
+En el caso de las empresas o instituciones que ofrecen proyectos, era importante considerar la siguiente información:
+
+  * Nombre
+  * Giro
+  * Descripción Empresa
+  * Ubicación
+  * Empresa Matriz
+  * Ubicación Empresa Matriz
+  * Rango de Número de Empleados
+  * Cuenta Linkedin
+  * Cuenta Facebook
+  * Cuenta Twitter
+  * Página Web
+  * Teléfono
+  * Certificaciones
+
+En el caso de los proyectos, las siguientes entidades:
+
+  * Información del Proyecto
+  * Perfiles que Requiere del Proyecto
+  * Usuario del Consultor Empresa
+  * Interacción del Usuario Consultor y Talento
+  
+En el apéndice [Entidades de datos solicitadas] se puede consultar el detalle de las tablas solicitadas. En el transcurso de este proyecto, el solicitante no disponía de la base de datos operativa de FDC ni otras fuentes de información útiles para trabajar, por lo que procedimos con una base de datos de ejemplo que se describirá con detalle en el [capítulo 5](#dpa).
+
+En el siguiente capítulo [Acercamiento Analítico] describimos la opción analítica elegida para crear el sistema de recomendación.

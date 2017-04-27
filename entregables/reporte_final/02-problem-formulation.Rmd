@@ -1,0 +1,20 @@
+# Objetivo del Proyecto
+
+Como se mencionó en la [Introducción], el proyecto **Desarrollo de plataforma de vinculación para profesionales de alta especialización y empresas mexicanas**, que en lo sucesivo se denominará **Fuga de Cerebros (FDC),** busca crear vínculos entre los talentos mexicanos que residen en el extranjero y promotores del sector público o privado en nuestro país con el fin de crear redes de colaboración a través de un **Sistema de Recomendación**. Una vía es a través de la red de proyectos mediante la cual, dichas organizaciones postularán un proyecto a través de la plataforma digital FDC. Dentro de esta plataforma, se generará una serie de recomendaciones (**MATCH**) de talentos con base en las necesidades de un proyecto propuesto.
+
+Este sistema deberá recomendar talentos de acuerdo a los perfiles que buscan los promotores de proyectos. Los talentos recomendados deberán ser lo más próximos a las capacidades técnicas y habilidades requeridas para el proyecto según la disponibilidad de perfiles inscritos en la base FDC según lo estsablecido en el proyecto a través de la plataforma web.
+
+
+## Entregables
+
+Para abordar el proyecto se han diseñaron los siguientes entregables:
+
+Entregable                                   |  Descripción                         | Responsable | Fecha de entrega |
+---------------------------------------------|--------------------------------------|---------------|------------|
+Diseño de base de datos analítica            | Documento que especifíca los datos requeridos para el sistema de recomendación |ITAM| 15 de septiembre 2016 |
+Documento con las especificaciones técnicas del equipo de desarrollo | Documento que específica los detalles técnicos de la base de datos operativa y el protocolo para comunicar cambios a la misma |Samuel Matarasso| No recibido |
+Diseño de sistema de recomendación           | Script que genera recomendaciones de perfiles |ITAM| 14 de noviembre de 2016 |
+Diseño de pipeline                           | Script que conecta las bases de datos operativa y analítica  |ITAM| 25 de noviembre de 2016 |
+
+
+En el siguiente capítulo [Estructura de Bases de Datos] se revisarán las bases de datos disponibles, principal insumo para el sistema de recomendación.

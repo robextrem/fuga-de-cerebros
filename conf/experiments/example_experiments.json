@@ -1,0 +1,23 @@
+{
+
+"random_forest_classifier": {
+    "model": {
+    	"name": "rf_class",
+    	"params": {
+    		"n_estimators": "[10,50]" 
+    			  } 
+    			},
+    "metrics": "precision_at_k, recall_at_k"
+  			},
+
+  "nearest_neighbors_classifier": {
+    "model": {
+        "name": "nn_class",
+        "params": {
+        	"n_neighbors": "[5, 25]"
+      			  }
+    			},
+    "metrics": "precision_at_k, recall_at_k",		
+  			}
+
+}

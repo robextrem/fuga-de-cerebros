@@ -1,0 +1,40 @@
+# Portada{-}
+
+<center>
+**Instituto Tecnológico Autónomo de México**
+
+<center>![](figures/logo_itam.png)</center>
+
+**Proyecto:**<br>
+**"FUGA DE CEREBROS"**
+<br>
+Desarrollo de plataforma de vinculación para profesionales de alta especialización 
+<br>
+y empresas mexicanas
+<br>
+No. de proyecto: 232745
+<br>
+
+**Programa de Estímulos a la Investigación CONACYT**
+<br><br>  
+  
+**Informe Técnico**  
+<br><br>
+
+**Autores:**  
+Adrián Sánchez  
+Denisse Martínez  
+Fernanda Alcalá  
+Sergio Haro  
+<br><br>
+ 
+  
+**Responsable:**  
+Adolfo De Unánue Tiscareño
+
+<center>![](figures/logo_conacyt.png)</center>
+
+**Ciudad de México**  
+
+**2016** 
+</center>

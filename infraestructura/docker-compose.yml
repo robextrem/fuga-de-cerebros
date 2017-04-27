@@ -1,0 +1,58 @@
+version: "2"
+
+services:                                                                               
+  luigi-server:                                                                         
+    build: luigi-server                                                                 
+    ports:                                                                              
+      - "8082:8082"
+
+  luigi-worker:
+    build:
+      context: ./luigi-worker                                                                      
+      dockerfile: Dockerfile
+      args:                                                                             
+        FDC_USER: ${FDC_USER}
+        FDC_UID: ${FDC_UID}
+        OUTPUT_DIR: ${OUTPUT_DIR}
+        GITHUB_USER: ${GITHUB_USER}
+        GITHUB_REPO: ${GITHUB_REPO}                                                     
+    env_file: .env
+    environment:
+      - PYTHONPATH=/home/${FDC_USER}/fuga-de-cerebros/etl
+    command: make all
+    depends_on:
+      - luigi-server
+    volumes:
+      - /home/${FDC_USER}/fuga-de-cerebros/import
+
+  neo4j:
+    container_name: neo4j
+    build:
+      context: ./neo4j
+      dockerfile: Dockerfile
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    volumes_from:
+      - luigi-worker
+    volumes:
+      - fdc:/var/lib/neo4j/data
+
+  api:
+    build:                                                                              
+      context: ./api
+      dockerfile: Dockerfile
+      args:                                                                             
+        FDC_USER: ${FDC_USER}
+        FDC_UID: ${FDC_UID}
+        OUTPUT_DIR: ${OUTPUT_DIR}
+        GITHUB_USER: ${GITHUB_USER}
+        GITHUB_REPO: ${GITHUB_REPO}                                                     
+    env_file: .env
+    ports:
+      - "5000:5000"
+    depends_on:
+        - neo4j
+
+volumes:
+  fdc:
